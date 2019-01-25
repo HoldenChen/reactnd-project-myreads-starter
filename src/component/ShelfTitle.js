@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 
-class TitleView extends Component{
+class ShelfTitle extends Component{
 
     render(){
         const {title} = this.props
@@ -12,6 +12,4 @@ class TitleView extends Component{
         )
     }
 }
-
-
-export default TitleView
+export default ShelfTitle
