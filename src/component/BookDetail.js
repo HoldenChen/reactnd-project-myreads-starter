@@ -22,11 +22,9 @@ class BookDetail extends Component{
                 <div className='book-title'>
                     {name}
                 </div>
-
                 <div className='book-authors'>
                     {author}
                 </div>
-
             </div>
         )
     }
