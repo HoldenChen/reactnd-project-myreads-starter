@@ -30,9 +30,9 @@ const readBooks = [{name :'The Hobbit',img:'http://books.google.com/books/conten
 
 
 const shelves = [
-    {name:"Current Reading",books:readingBooks},
-    {name:"Want to Read",books:willReadBooks},
-    {name:"Read" ,books:readBooks}
+    {name:"currentlyReading",books:readingBooks},
+    {name:"wantToRead",books:willReadBooks},
+    {name:"read" ,books:readBooks}
 ]
 
 class BooksApp extends React.Component {
@@ -50,8 +50,10 @@ class BooksApp extends React.Component {
   }
 
 
+
   render() {
     return (
+
       <div className="app">
         {this.state.showSearchPage ? (
           <div className="search-books">
@@ -76,10 +78,13 @@ class BooksApp extends React.Component {
           </div>
         ) : (
           <div className="list-books">
+              {
+                  console.log(this.state.shelves)
+              }
             <div className="list-books-title">
               <h1>MyReads</h1>
             </div>
-            <MyShelves shelves = {shelves}/>
+            <MyShelves  shelves = {shelves} />
             <div className="open-search">
               <button onClick={() => this.setState({ showSearchPage: true })}>Add a book</button>
             </div>

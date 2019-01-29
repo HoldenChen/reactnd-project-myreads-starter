@@ -15,7 +15,7 @@ class BookDetail extends Component{
                 <div className='book-top'>
                     <div className ='book-cover' style={divStyle}>
                         <div className='book-shelf-changer'>
-                           <SelectShelf defaultvalue ={shelf} bookid = {id}/>
+                           <SelectShelf defaultvalue ={shelf} bookid = {id} {...this.props}/>
                         </div>
                     </div>
                 </div>
