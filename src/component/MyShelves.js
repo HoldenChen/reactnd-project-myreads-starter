@@ -10,7 +10,6 @@ class MyShelves extends Component {
         this.setState({
             shelves : shelves
         })
-        console.log(this.state.shelves);
     }
 
     render() {

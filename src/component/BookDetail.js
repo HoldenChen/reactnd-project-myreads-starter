@@ -4,26 +4,32 @@ import SelectShelf from './SelectShelf'
 class BookDetail extends Component{
 
     render(){
-        const {id,name,author,shelf,imgUrl} = this.props;
+        const {book} = this.props;
+
+        const bookUrl = typeof book.imageLinks === 'undefined' ? 'no-image' : book.imageLinks.thumbnail
+
+        {
+            console.log(bookUrl)
+        }
         const divStyle = {
             width: '128px',
             height: '193px',
-            backgroundImage: `url(${imgUrl})`
+            backgroundImage: `url(${bookUrl})`
         };
         return(
             <div className='book'>
                 <div className='book-top'>
                     <div className ='book-cover' style={divStyle}>
                         <div className='book-shelf-changer'>
-                           <SelectShelf defaultvalue ={shelf} bookid = {id} {...this.props}/>
+                           <SelectShelf defaultvalue ={book.shelf} bookid = {book.id} {...this.props}/>
                         </div>
                     </div>
                 </div>
                 <div className='book-title'>
-                    {name}
+                    {book.title}
                 </div>
                 <div className='book-authors'>
-                    {author}
+                    {book.authors}
                 </div>
             </div>
         )

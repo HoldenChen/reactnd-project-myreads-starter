@@ -13,9 +13,7 @@ class BookList extends Component{
                     {
                         books.map((book) => (
                            <li key={book.id}>
-                                   <BookDetail   id = {book.id} name = {book.name}
-                                               author = {book.author} shelf = {book.shelf}
-                                               imgUrl = {book.img}
+                                   <BookDetail   book = {book}
                                                {...this.props}
                                    />
                            </li>
