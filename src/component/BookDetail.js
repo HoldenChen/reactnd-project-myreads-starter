@@ -7,10 +7,6 @@ class BookDetail extends Component{
         const {book} = this.props;
 
         const bookUrl = typeof book.imageLinks === 'undefined' ? 'no-image' : book.imageLinks.thumbnail
-
-        {
-            console.log(bookUrl)
-        }
         const divStyle = {
             width: '128px',
             height: '193px',
@@ -29,7 +25,7 @@ class BookDetail extends Component{
                     {book.title}
                 </div>
                 <div className='book-authors'>
-                    {book.authors}
+                    {book.authors ? book.authors.join(', ') : ''}
                 </div>
             </div>
         )

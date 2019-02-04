@@ -70,7 +70,34 @@ class SelectShelf extends Component{
 
     }
     componentWillMount(){
-        this.setState({value: typeof this.props.defaultvalue === 'undefined' ? 'none' :this.props.defaultvalue    })
+
+        if(typeof this.props.defaultvalue !== 'undefined'){
+             //首页的书籍选择控件
+            this.setState({
+                value: this.props.defaultvalue
+            })
+        }else if(typeof  this.props.default === 'undefined'){
+            //搜索页的书籍选择控件
+            let selectValue = 'none'
+            this.setState({
+                value : 'none'
+            })
+            //
+            BooksAPI.getAll().then(
+                res => res.map(
+                    book => {
+                        if(book.id === this.book.id){
+                            this.setState({
+                                value : book.shelf
+                            })
+                        }
+                    }
+                )
+            )
+
+        }
+
+        // this.setState({value: typeof this.props.defaultvalue === 'undefined' ? 'none' :this.props.defaultvalue    })
     }
 
     render(){

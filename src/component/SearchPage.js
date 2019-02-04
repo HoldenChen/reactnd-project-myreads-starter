@@ -30,12 +30,13 @@ class SearchPage extends  Component {
         })
     }
 
+
     render(){
         const { query ,search_result } = this.state
         return (
             <div className="search-books">
                 <div className="search-books-bar">
-                    <Link to='/' className='close-search'>
+                    <Link to='/' className='close-search' onClick={()=> window.location.href = '/'}>
                         Close
                     </Link>
                     {/*<button className="close-search" onClick={() => this.setState({ showSearchPage: false })}>Close</button>*/}
